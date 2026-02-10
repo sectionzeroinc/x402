@@ -1,0 +1,64 @@
+"""x402 MCP integration - payment protocol for MCP tool calls.
+
+Provides server-side and client-side wrappers for adding x402 payment
+handling to MCP (Model Context Protocol) tools.
+
+Requires the 'mcp' optional dependency: pip install x402[mcp]
+
+Server-side:
+    ```python
+    from x402.mcp import create_payment_wrapper
+
+    wrapper = create_payment_wrapper(
+        resource_server,
+        accepts=weather_accepts,
+        resource=ResourceInfo(url="mcp://tool/get_weather"),
+    )
+
+    @mcp.tool(name="get_weather", description="Get weather")
+    @wrapper
+    async def get_weather(city: str) -> str:
+        return json.dumps({"city": city, "weather": "sunny"})
+    ```
+
+Client-side:
+    ```python
+    from x402.mcp import create_x402_mcp_client
+
+    async with create_x402_mcp_client(client, "http://localhost:4022") as mcp:
+        result = await mcp.call_tool("get_weather", {"city": "SF"})
+    ```
+"""
+
+from __future__ import annotations
+
+from .constants import (
+    MCP_PAYMENT_META_KEY,
+    MCP_PAYMENT_RESPONSE_META_KEY,
+)
+
+# Lazy imports to avoid requiring mcp at import time
+__all__ = [
+    # Server
+    "create_payment_wrapper",
+    # Client
+    "create_x402_mcp_client",
+    "x402MCPSession",
+    "MCPToolCallResult",
+    # Constants
+    "MCP_PAYMENT_META_KEY",
+    "MCP_PAYMENT_RESPONSE_META_KEY",
+]
+
+
+def __getattr__(name: str):
+    """Lazy import MCP components to avoid requiring mcp at import time."""
+    if name == "create_payment_wrapper":
+        from .server import create_payment_wrapper
+
+        return create_payment_wrapper
+    if name in ("create_x402_mcp_client", "x402MCPSession", "MCPToolCallResult"):
+        from . import client as _client
+
+        return getattr(_client, name)
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

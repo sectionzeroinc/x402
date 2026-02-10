@@ -46,6 +46,9 @@ svm = [
     "solana>=0.36.0",
 ]
 
+# MCP (Model Context Protocol) integration
+mcp = ["mcp>=1.0.0"]
+
 # Extensions - optional functionality
 extensions = ["jsonschema>=4.0.0"]
 
@@ -53,7 +56,7 @@ extensions = ["jsonschema>=4.0.0"]
 clients = ["x402[httpx,requests]"]
 servers = ["x402[flask,fastapi]"]
 mechanisms = ["x402[evm,svm]"]
-all = ["x402[httpx,requests,flask,fastapi,evm,svm,extensions]"]
+all = ["x402[httpx,requests,flask,fastapi,evm,svm,mcp,extensions]"]
 
 [dependency-groups]
 dev = [
@@ -118,6 +121,7 @@ exclude = [
 "http" = "x402/http"
 "mechanisms" = "x402/mechanisms"
 "extensions" = "x402/extensions"
+"mcp" = "x402/mcp"
 
 [tool.ruff]
 line-length = 100
