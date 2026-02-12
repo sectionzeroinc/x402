@@ -210,8 +210,8 @@ def payment_middleware(
         ```python
         from fastapi import FastAPI
         from x402 import x402ResourceServer
-        from x402.http import HTTPFacilitatorClient
-        from x402.http.middleware import fastapi_payment_middleware
+        from x402.http_api import HTTPFacilitatorClient
+        from x402.http_api.middleware import fastapi_payment_middleware
 
         app = FastAPI()
 

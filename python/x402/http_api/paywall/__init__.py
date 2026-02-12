@@ -5,7 +5,7 @@ Templates are auto-generated from the TypeScript @x402/paywall package.
 
 Example:
     ```python
-    from x402.http.paywall import create_paywall, evm_paywall, svm_paywall
+    from x402.http_api.paywall import create_paywall, evm_paywall, svm_paywall
 
     # EVM only
     paywall = create_paywall().with_network(evm_paywall).build()

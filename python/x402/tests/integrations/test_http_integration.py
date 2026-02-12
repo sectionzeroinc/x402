@@ -20,7 +20,7 @@ from x402 import (
     x402ResourceServer,
     x402ResourceServerSync,
 )
-from x402.http import (
+from x402.http_api import (
     HTTPRequestContext,
     decode_payment_required_header,
     x402HTTPClient,

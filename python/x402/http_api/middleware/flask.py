@@ -271,8 +271,8 @@ class PaymentMiddleware:
         ```python
         from flask import Flask
         from x402 import x402ResourceServer
-        from x402.http import HTTPFacilitatorClient
-        from x402.http.middleware import FlaskPaymentMiddleware
+        from x402.http_api import HTTPFacilitatorClient
+        from x402.http_api.middleware import FlaskPaymentMiddleware
 
         app = Flask(__name__)
 

@@ -22,6 +22,8 @@ classifiers = [
 dependencies = [
     "nest-asyncio>=1.6.0",
     "pydantic>=2.0.0",
+    "solana>=0.36.0",
+    "solders>=0.27.0",
     "typing_extensions>=4.0.0",
 ]
 
@@ -46,6 +48,9 @@ svm = [
     "solders>=0.27.0",
     "solana>=0.36.0",
 ]
+stellar = [
+    "stellar-sdk>=9.0.0",
+]
 
 # MCP (Model Context Protocol) integration
 mcp = ["mcp>=1.0.0"]
@@ -56,8 +61,8 @@ extensions = ["jsonschema>=4.0.0"]
 # Convenience bundles
 clients = ["x402[httpx,requests]"]
 servers = ["x402[flask,fastapi]"]
-mechanisms = ["x402[evm,svm]"]
-all = ["x402[httpx,requests,flask,fastapi,evm,svm,mcp,extensions]"]
+mechanisms = ["x402[evm,svm,stellar]"]
+all = ["x402[httpx,requests,flask,fastapi,evm,svm,stellar,mcp,extensions]"]
 
 [dependency-groups]
 dev = [
@@ -82,6 +87,8 @@ dev = [
     # SVM dependencies
     "solders>=0.27.0",
     "solana>=0.36.0",
+    # Stellar dependencies
+    "stellar-sdk>=9.0.0",
     # MCP dependencies
     "mcp>=1.26.0",
     "nest-asyncio>=1.6.0",

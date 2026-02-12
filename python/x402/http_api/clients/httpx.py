@@ -166,7 +166,7 @@ def x402_httpx_transport(
     Example:
         ```python
         from x402 import x402Client
-        from x402.http.clients import x402_httpx_transport
+        from x402.http_api.clients import x402_httpx_transport
         import httpx
 
         client = x402Client()
@@ -232,7 +232,7 @@ def wrapHttpxWithPayment(
         ```python
         import httpx
         from x402 import x402Client
-        from x402.http.clients import wrapHttpxWithPayment
+        from x402.http_api.clients import wrapHttpxWithPayment
 
         x402 = x402Client()
         # ... register schemes ...
@@ -265,7 +265,7 @@ def wrapHttpxWithPaymentFromConfig(
         ```python
         import httpx
         from x402 import x402ClientConfig, SchemeRegistration
-        from x402.http.clients import wrapHttpxWithPaymentFromConfig
+        from x402.http_api.clients import wrapHttpxWithPaymentFromConfig
         from x402.mechanisms.evm.exact import ExactEvmScheme
 
         config = x402ClientConfig(
@@ -301,7 +301,7 @@ class x402HttpxClient(httpx.AsyncClient):
     Example:
         ```python
         from x402 import x402Client
-        from x402.http.clients import x402HttpxClient
+        from x402.http_api.clients import x402HttpxClient
 
         x402 = x402Client()
         # ... register schemes ...
