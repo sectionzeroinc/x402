@@ -180,7 +180,7 @@ def x402_http_adapter(
         ```python
         import requests
         from x402 import x402ClientSync
-        from x402.http.clients import x402_http_adapter
+        from x402.http_api.clients import x402_http_adapter
 
         x402 = x402ClientSync()
         # ... register schemes ...
@@ -222,7 +222,7 @@ def wrapRequestsWithPayment(
         ```python
         import requests
         from x402 import x402ClientSync
-        from x402.http.clients import wrapRequestsWithPayment
+        from x402.http_api.clients import wrapRequestsWithPayment
 
         x402 = x402ClientSync()
         # ... register schemes ...
@@ -259,7 +259,7 @@ def wrapRequestsWithPaymentFromConfig(
         ```python
         import requests
         from x402 import x402ClientConfig, SchemeRegistration
-        from x402.http.clients import wrapRequestsWithPaymentFromConfig
+        from x402.http_api.clients import wrapRequestsWithPaymentFromConfig
         from x402.mechanisms.evm.exact import ExactEvmScheme
 
         config = x402ClientConfig(
@@ -305,7 +305,7 @@ def x402_requests(
     Example:
         ```python
         from x402 import x402ClientSync
-        from x402.http.clients import x402_requests
+        from x402.http_api.clients import x402_requests
 
         x402 = x402ClientSync()
         # ... register schemes ...

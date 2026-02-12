@@ -65,7 +65,7 @@ class x402ResourceServer(x402ResourceServerBase):
     Example:
         ```python
         from x402 import x402ResourceServer
-        from x402.http import HTTPFacilitatorClient, FacilitatorConfig
+        from x402.http_api import HTTPFacilitatorClient, FacilitatorConfig
         from x402.mechanisms.evm.exact import ExactEvmServerScheme
 
         facilitator = HTTPFacilitatorClient(FacilitatorConfig(url="https://..."))
@@ -253,7 +253,7 @@ class x402ResourceServerSync(x402ResourceServerBase):
     Example:
         ```python
         from x402 import x402ResourceServerSync
-        from x402.http import HTTPFacilitatorClientSync
+        from x402.http_api import HTTPFacilitatorClientSync
 
         from x402.mechanisms.evm.exact import ExactEvmServerScheme
 

@@ -15,7 +15,7 @@ import asyncio
 import pytest
 
 from x402 import x402Client, x402Facilitator, x402ResourceServer
-from x402.http import (
+from x402.http_api import (
     HTTPRequestContext,
     decode_payment_required_header,
     x402HTTPClient,

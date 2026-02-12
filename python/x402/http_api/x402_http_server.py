@@ -46,7 +46,7 @@ class x402HTTPResourceServer(x402HTTPServerBase):
 
     Example:
         ```python
-        from x402.http import x402HTTPResourceServer
+        from x402.http_api import x402HTTPResourceServer
 
         http_server = x402HTTPResourceServer(resource_server, routes)
 
@@ -237,7 +237,7 @@ class x402HTTPResourceServerSync(x402HTTPServerBase):
     Example:
         ```python
         from x402 import x402ResourceServerSync
-        from x402.http import x402HTTPResourceServerSync
+        from x402.http_api import x402HTTPResourceServerSync
 
         # Use sync resource server with sync HTTP server
         server = x402ResourceServerSync(facilitator)

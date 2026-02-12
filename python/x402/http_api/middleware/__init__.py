@@ -6,8 +6,8 @@ protects endpoints with x402 payment requirements.
 Note: Import specific middleware modules directly to avoid
 requiring all framework dependencies:
 
-    from x402.http.middleware.fastapi import payment_middleware
-    from x402.http.middleware.flask import PaymentMiddleware
+    from x402.http_api.middleware.fastapi import payment_middleware
+    from x402.http_api.middleware.flask import PaymentMiddleware
 """
 
 # Lazy imports - only import when the module is accessed to avoid

@@ -6,8 +6,8 @@ automatically handle 402 Payment Required responses.
 Note: Import specific client modules directly to avoid
 requiring all HTTP client dependencies:
 
-    from x402.http.clients.httpx import x402HttpxClient
-    from x402.http.clients.requests import x402_requests
+    from x402.http_api.clients.httpx import x402HttpxClient
+    from x402.http_api.clients.requests import x402_requests
 
 Install the appropriate extra:
     uv add x402[httpx]     # For async httpx client

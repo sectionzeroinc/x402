@@ -56,7 +56,7 @@ class HTTPFacilitatorClient(HTTPFacilitatorClientBase):
 
     Example:
         ```python
-        from x402.http import HTTPFacilitatorClient, FacilitatorConfig
+        from x402.http_api import HTTPFacilitatorClient, FacilitatorConfig
 
         facilitator = HTTPFacilitatorClient(FacilitatorConfig(url="https://..."))
 
@@ -291,7 +291,7 @@ class HTTPFacilitatorClientSync(HTTPFacilitatorClientBase):
 
     Example:
         ```python
-        from x402.http import HTTPFacilitatorClientSync, FacilitatorConfig
+        from x402.http_api import HTTPFacilitatorClientSync, FacilitatorConfig
 
         facilitator = HTTPFacilitatorClientSync(FacilitatorConfig(url="https://..."))
 

@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
-    from x402.http.facilitator_client import HTTPFacilitatorClient
+    from x402.http_api.facilitator_client import HTTPFacilitatorClient
 
 
 @dataclass
@@ -95,7 +95,7 @@ class BazaarDiscoveryExtension:
 
         Example:
             ```python
-            from x402.http import HTTPFacilitatorClient
+            from x402.http_api import HTTPFacilitatorClient
             from x402.extensions.bazaar import with_bazaar
 
             client = with_bazaar(HTTPFacilitatorClient())
@@ -199,7 +199,7 @@ def with_bazaar(client: HTTPFacilitatorClient) -> BazaarExtendedClient:
 
     Example:
         ```python
-        from x402.http import HTTPFacilitatorClient, FacilitatorConfig
+        from x402.http_api import HTTPFacilitatorClient, FacilitatorConfig
         from x402.extensions.bazaar import with_bazaar, ListDiscoveryResourcesParams
 
         # Basic usage
