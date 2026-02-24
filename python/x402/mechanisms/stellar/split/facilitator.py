@@ -96,16 +96,8 @@ class SplitStellarScheme:
             if not validate_stellar_destination_address(recipient.address):
                 return _invalid(f"invalid_recipient_address: {recipient.address}")
 
-        # 4. Delegate core verification to exact scheme
-        # Temporarily patch scheme to allow exact verify to work
-        original_scheme = payload.scheme
-        try:
-            # The exact verifier checks scheme == "exact", so we need to adapt
-            # We verify the transaction structure directly instead
-            result = await self._verify_transaction_structure(payload, requirements)
-            return result
-        finally:
-            pass
+        # 4. Verify the underlying transaction structure
+        return await self._verify_transaction_structure(payload, requirements)
 
     async def _verify_transaction_structure(
         self,
